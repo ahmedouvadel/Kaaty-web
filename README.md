@@ -7,4 +7,4 @@ Kaaty est une plateforme complète permettant aux utilisateurs de réserver une 
 ✅ Services additionnels : cameraman, buvettes, cadeaux 🎁
 ✅ Système de connexion et inscription 🔐
 
-<img width="400" src="https://raw.githubusercontent.com/ahmedouvadel/Kaaty-web/main/screenshots/kaaty.png">
+<img width="700" src="https://raw.githubusercontent.com/ahmedouvadel/Kaaty-web/main/screenshots/kaaty.png">
