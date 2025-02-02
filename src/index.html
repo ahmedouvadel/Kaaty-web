@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>My app</title>
+    <title>Kaaty website</title>
     <meta charset="UTF-8" />
-    <base href="/">
+    <base href="/" />
+    <style>
+      /* Styles du loader */
+      #loading-screen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        border-top-color: #121f99;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
-    <app-root>Loading...</app-root>
+    <div id="loading-screen">
+      <div class="spinner"></div>
+    </div>
+    
+    <app-root></app-root>
+
+    <script>
+      window.addEventListener("load", function () {
+        document.getElementById("loading-screen").style.display = "none";
+      });
+    </script>
   </body>
 </html>
