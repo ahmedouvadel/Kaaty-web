@@ -6,6 +6,19 @@
   "newProjectRoot": "projects",
   "projects": {
     "demo": {
+      "i18n": {
+        "sourceLocale": "fr",
+        "locales": {
+          "ar": {
+            "translation": "src/locale/messages.ar.xlf",
+            "baseHref": "/ar/"
+          },
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": "/en/"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -23,14 +36,35 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false
-            }
+            },
+            "fr": {
+            "localize": ["fr"],
+            "outputPath": "dist/demo/fr",
+            "baseHref": "/fr/"
+          },
+          "ar": {
+            "localize": ["ar"],
+            "outputPath": "dist/demo/ar",
+            "baseHref": "/ar/"
+          },
+          "en": {
+            "localize": ["en"],
+            "outputPath": "dist/demo/en",
+            "baseHref": "/en/"
+          }
           },
           "options": {
             "assets": [],
+            "localize": [
+            "ar"
+          ],
             "index": "src/index.html",
             "browser": "src/main.ts",
             "outputPath": "dist/demo",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js",
+              "@angular/localize/init"
+            ],
             "scripts": [],
             "styles": ["src/global_styles.css"],
             "tsConfig": "tsconfig.app.json"
@@ -47,6 +81,14 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "demo:build",
+            "outputPath": "src/locale",
+            "format":"json" 
+          }
         }
       },
       "prefix": "app",
